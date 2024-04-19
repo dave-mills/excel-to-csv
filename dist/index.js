@@ -52855,6 +52855,7 @@ var __webpack_exports__ = {};
 (() => {
 const {excel2csv} = __nccwpck_require__(9960);
 const core = __nccwpck_require__(2700);
+const {join} = __nccwpck_require__(1017);
 
 const workspace = process.env.GITHUB_WORKSPACE;
 const excelPath = join(workspace, core.getInput('excel_path'));
