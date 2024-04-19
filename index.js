@@ -1,4 +1,13 @@
 const {excel2csv} = require('./excel2csv');
+const core = require('@actions/core');
 
-excel2csv('odk_form/TAPE - Ethiopia.xlsx');
+const workspace = process.env.GITHUB_WORKSPACE;
+const excelPath = join(workspace, core.getInput('excel_path'));
+
+
+try {
+    excel2csv(excelPath);
+} catch(err) {
+    core.setFailed(err.message);
+}
 
